@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Journey Begins !</title>
+          <!-- Template Main JS File -->
+          <script>
+            fetch('https://vrweeaypt3.execute-api.eu-central-1.amazonaws.com/Prod/add')
+                .then(() => fetch('https://vrweeaypt3.execute-api.eu-central-1.amazonaws.com/Prod/count') )          
+                .then(response => response.json())
+                .then((data) => {
+                    document.getElementById('replaceme').innerText = data.count
+                })
+        </script>
+    </head>
+    <body>
+        <p>Visitors : 
+            <span id="replaceme" > </span>
+        </p>
+    </body>
+</html>
