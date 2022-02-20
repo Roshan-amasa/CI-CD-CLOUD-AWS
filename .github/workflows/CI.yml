@@ -18,11 +18,11 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Deploy app build to S3 bucket
         run: aws s3 sync ./resume-site s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude '.git/*'
-        
+
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Run Super-Linter
-        uses: github/super-linter@v3
+        uses: github/super-linter@v4
         env:
           DEFAULT_BRANCH: master
