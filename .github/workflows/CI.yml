@@ -18,12 +18,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Deploy app build to S3 bucket
         run: aws s3 sync ./resume-site s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude '.git/*'
-
-jobs:
-  super-lint:
-    name: Lint code base
-    runs-on: ubuntu-latest
-    steps:
+        
       - name: Checkout code
         uses: actions/checkout@v2
 
