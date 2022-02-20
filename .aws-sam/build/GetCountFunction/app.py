@@ -89,7 +89,7 @@ def add_count_handler(event, context):
             }
         },
         ExpressionAttributeValues={
-            ':inc': {'N': '1'}
+            ':inc': {'N': '10'}
         },
         UpdateExpression="ADD visitors :inc"
     )
